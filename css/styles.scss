@@ -1,0 +1,219 @@
+$brightGreen: #2CDA9D;
+
+@mixin toolbar() {
+    .toolbar {
+        width: 50%;
+        height: 50px;
+        display: flex;
+        align-items: center;
+        gap: 7px;
+        background-color: rgb(32, 30, 30);
+        border-top-right-radius: 20px;
+        box-shadow: 0px 0px 2.5px $brightGreen;
+        
+        .fas, .far {
+            margin-left: 15px;
+            &:hover {
+                color: $brightGreen;
+            }
+        }
+
+        .fa {
+            margin-left: auto;
+            margin-right: 15px;
+            &:hover {
+                color: $brightGreen;
+                cursor: pointer;
+            }
+        }
+    }
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Raleway', sans-serif;
+    background-color:  rgb(25, 25, 25);
+    color: #fff;
+}
+
+h1 {
+    margin-block-start: 0.67em;
+    margin-block-end: 0.67em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+}
+
+h2 {
+    margin-block-start: 0.83em;
+    margin-block-end: 0.83em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+}
+
+h3 {
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+}
+
+p {
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+}
+
+i {
+    font-size: 1.85em;
+}
+
+// Editor
+.editorWrapper {
+    max-width: 600px;
+    margin: 1.125rem auto;
+    padding: 20px 0;  
+
+    @include toolbar();
+
+    textarea {
+        font-family: sans-serif;
+        border-radius: 0px 20px;
+    }
+}
+
+// Previewer
+.previewerWrapper {
+    max-width: 800px;
+    margin: 1.125rem auto;
+    padding: 20px 0;
+
+    @include toolbar();
+
+    .textWrapper {
+        background-color: #fff;
+        color: #000;
+        border-radius: 0px 20px;
+        width: 800px;
+        min-height: 300px;
+        padding: 20px;
+
+        // MARKDOWN STYLES
+        h1 {
+            border-bottom: 2px solid #000;
+        }
+
+        h2 {
+            border-bottom: 1px solid #000;
+        }
+
+        p > code {
+            padding: 3px;
+        }
+
+        code {
+            background: #000;
+            color: #fff;
+            font-size: 0.875rem;
+            font-weight: bold;
+
+            &:hover {
+                color: $brightGreen;
+            }
+        }
+
+        pre {
+            display: block;
+            overflow: auto;
+            background: #000;
+            color: #fff;
+            padding: 5px;
+            line-height: 1.2;
+        }
+
+        blockquote {
+            border-left: 3px solid #000;
+            color: #000;
+            padding-left: 5px;
+            margin-left: 25px;
+        }
+
+        table {
+            border-collapse: collapse;
+        }
+
+        td, th {
+            border: 2px solid #000;
+            padding: 5px 5px;
+        }
+
+        img {
+            display: block;
+            max-width: 90%;
+            margin: 2rem auto;
+        }
+
+        ul {
+            padding: 5px 0px 0px 35px;
+        }
+
+        ol {
+            padding: 15px 0px 0px 35px;
+        }
+    }    
+}
+
+// HIDE AND MAXIMIZE
+.hidden {
+    display: none;
+}
+
+.maximized {
+    width: 96%;
+    min-height: 100vh;
+    margin: auto;
+}
+
+@media screen and (max-width: 1100px) {
+    body {
+      margin: 10px 0;
+    }
+
+    .editorWrapper {
+      width: 80vw;
+      margin: 0 auto;
+
+      .toolbar {
+        width: 80%;
+      }
+
+      textarea {
+        width: 100%;
+      }
+    }
+
+    .previewerWrapper {
+      width: 95vw;
+      margin: 20px auto;
+
+      .toolbar {
+        width: 80%;
+      }
+      
+      .textWrapper {
+        width: 100%;
+
+        img {
+          height: 200px;
+        }
+      }
+    }
+  }
