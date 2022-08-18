@@ -2,7 +2,7 @@
 
 ### A freeCodeCamp project - "Build a Markdown Previewer". 
 
-This is a simple markdown previewer built from scratch using React, SASS, and MarkedJS.
+This is a simple markdown previewer built from scratch using React, SCSS, and MarkedJS.
 
 # Preview
 
