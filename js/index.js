@@ -84,7 +84,7 @@ function Editor(props) {
             </div>
             <textarea 
                 name="text" 
-                id="text" 
+                id="editor" 
                 cols="80" 
                 rows="10"
                 value={props.text}
@@ -104,6 +104,7 @@ function Previewer(props) {
             </div>
             <div 
                 className="textWrapper"
+                id="preview"
                 dangerouslySetInnerHTML={{ __html: marked.parse(props.markdown) }}
             ></div>
         </div>
